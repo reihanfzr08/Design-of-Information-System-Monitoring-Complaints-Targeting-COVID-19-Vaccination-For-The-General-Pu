@@ -1,0 +1,69 @@
+<div class="tab-pane fade show active" id="show-pelapor" role="tabpanel" aria-labelledby="home-tab">
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4 mt-2">
+    
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>No Hp</th>
+                <th>Nama</th>
+                <th>Status Respon</th>
+                <th>Jenis Kelamin</th>
+                <th>Usia</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% for (let i = 0; i < pelapor.length; i++) { %>
+                <tr>
+                  <td><%= i + 1 %>.</td>
+                  <td><%= pelapor[i].nohp %></td>
+                  <td><%= pelapor[i].nama %></td>
+                  <% if ( pelapor[i].statusRespon == 1 ) { %>
+                  <td>
+                    <label for="" name="direspon">Direspon <i class="fa fa-check-square" style="color:rgb(0, 194, 0)" aria-hidden="true"></i></label>
+                  </td>
+                 <%   } else {  %>
+                   
+                  
+
+                  %>
+                  <td>
+                    <label for="">Belum Direspon</label>
+                  </td>
+                 <% } %>
+                  <td><%= pelapor[i].jenisKelamin %></td>
+                  <td><%= pelapor[i].usia %></td>
+                  <td>
+                    <form action="" method="POST">
+                      <a href="javascript:void()" id="respon" name="respon" type="button" class="btn btn-primary button-view" data-id="<%= pelapor[i].id %>" data-nohp="<%= pelapor[i].nohp %>" data-nama="<%= pelapor[i].nama %>" 
+                        data-jeniskelamin="<%= pelapor[i].jenisKelamin %>" data-usia="<%= pelapor[i].usia %>" data-tglvaksin1="<%= pelapor[i].tglvaksin1 %>"
+                        data-categoryid1 = "<%= pelapor[i].categoryId1._id %>" data-categoryid1name = "<%= pelapor[i].categoryId1.name %>" data-tmptvaksin1= "<%= pelapor[i].tmptvaksin1 %>" data-about1= "<%= pelapor[i].about1 %>" data-tglvaksin2="<%= pelapor[i].tglvaksin2 %>"
+                        data-categoryid2= "<%= pelapor[i].categoryId2._id %>"data-categoryid2name = "<%= pelapor[i].categoryId2.name %>" data-tmptvaksin2= "<%= pelapor[i].tmptvaksin2 %>" data-about2= "<%= pelapor[i].about2 %>" data-about= "<%= pelapor[i].about %>">Detail</a>
+                        <% if ( pelapor[i].statusRespon == 1 ) { %>
+                       
+                        <a href="/admin/pelapor/<%= pelapor[i].id %>" type="button" class="btn btn-warning" hidden >Respon</a>
+
+                       <% } else { %>
+
+                        <a href="/admin/pelapor/<%= pelapor[i].id %>" type="button" class="btn btn-warning">Respon</a>
+
+                      <% } %>
+                          
+                          </form>
+                        </td>
+                      </tr> 
+                    <% } %>
+                    </tbody>
+                  </table>
+                </div>
+      </div>
+    </div>
+  
+  </div>
+  
+   

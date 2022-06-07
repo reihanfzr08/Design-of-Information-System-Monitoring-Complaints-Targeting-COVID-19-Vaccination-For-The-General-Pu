@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="card bg-light mb-3" style="max-width: 18rem;">
+        <div class="card-header">
+          <div class="row">
+            <div class="col">
+              Kategori
+            </div>
+            <div class="col bg-primary rounded text-white">
+              Total = <%= category.length %>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+
+
+          <% var arrayVaksin=[ ]; for (let i=0; i < category.length; i++){
+            arrayVaksin.push(category[i].pelaporId.length); }; var jumlah=0; for (let i=0; i < arrayVaksin.length; i++)
+            { jumlah +=arrayVaksin[i]; } console.log(jumlah); %>
+
+            <h5 class="card-title">
+              Vaksin terpakai = <label for="" class="bg-primary text-white rounded">
+                <%= jumlah %>
+              </label>
+            </h5>
+            <canvas id="myChart1" width="400" height="400"></canvas>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card bg-light mb-3" style="max-width: 18rem;">
+        <div class="card-header">
+          <div class="row">
+            <div class="col">
+              Pelapor
+            </div>
+            <div class="col bg-primary rounded text-white">
+              Total = <%= pelapor.length %>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Status Respon</h5>
+          <canvas id="myChart3" width="400" height="400"></canvas>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card bg-light mb-3" style="max-width: 18rem;">
+        <div class="card-header">
+          <div class="row">
+            <div class="col">
+
+            </div>
+            <div class="col bg-primary rounded text-white">
+              Total
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title"></h5>
+          <canvas id="myChart2" width="400" height="400"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

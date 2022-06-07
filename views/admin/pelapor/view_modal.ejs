@@ -1,0 +1,143 @@
+<div class="modal fade" id="view-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Info data vaksinasi</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+           
+        <form action="/admin/club" method="POST" enctype="multipart/form-data">
+            <div class="modal-body">
+                    <div class="row">
+                        <div class="col font-weight-bold mb-4 mt-2">
+                          Info Data Diri
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="name">Nomor Handphone</label>
+                      <div class="row">
+                        <div class="col">
+                          <div class="row">
+                            <div class="col">
+                              <input type="text" class="form-control nohp" name="nohp" placeholder="Masukkan Nomor Handphone" required disabled>
+                            </div>
+                            <div class="col">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="name">Nama</label>
+                      <input type="text" class="form-control id" hidden>
+                      <input type="text" class="form-control nama" name="nama" placeholder="Masukkan Nama" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="name">Jenis Kelamin</label>
+                      <select class="form-control jenisKelamin" name="jenisKelamin">
+                        <option value="">- Pilih Jenis Kelamin -</option>
+                        <% 
+                        let jenisKelamin = ["Laki-laki", "Perempuan"];
+      
+                        for(let i = 0; i< jenisKelamin.length; i++){ %>
+                          <option value="<%= jenisKelamin[i] %>"><%= jenisKelamin[i] %></option>
+                          <%}%>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="name">Usia</label>
+                      <div class="row">
+                        <div class="col">
+                          <div class="row">
+                            <div class="col">
+                              <div class="row">
+                                <div class="col">
+                                  <input type="text" class="form-control usia" name="usia" placeholder="Masukkan Usia" required>
+                                </div>
+                                <div class="col">
+                                <label for="">tahun</label>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col">
+                        </div>
+                      </div>
+                    </div>
+                    <input type="text" class="form-control id" hidden>
+                    <div class="row">
+                      <div class="col font-weight-bold mb-4 mt-2">
+                        Info Data Vaksinasi
+                    </div>
+                    
+                  </div>
+                    <div class="row">
+                      <div class="col mx-6">
+                        <div class="form-group">
+                          <label for="name">Tanggal Vaksinasi (Dosis 1)</label>
+                          <input type="date" class="form-control tglvaksin1" name="tglvaksin1" placeholder="Masukkan Usia" required>
+                        </div>
+                        <div class="form-group">
+                          <label for="name">Jenis Vaksin (Dosis 1)</label>
+                          <select class="form-control" name="category1">
+                            <option></option>
+                          </select>
+                        </div>
+                        <div class="form-group">
+                          <label for="name">Tempat Vaksinasi (Dosis 1)</label>
+                          <input type="text" class="form-control tmptvaksin1" name="tmptvaksin1" placeholder="Masukkan Nama" required>
+                        </div>
+                        <div class="form-group">
+                          <label for="name">Keluhan Pasca Vaksinasi (Dosis 1)</label>
+                          <textarea name="about1" class="form-control about1"></textarea>
+                        </div>
+                      </div>
+      
+                      <div class="col mx-6">
+                          <div class="form-group">
+                            <label for="name">Tanggal Vaksinasi (Dosis 2)</label>
+                            <input type="date" class="form-control tglvaksin2" name="tglvaksin2" placeholder="Masukkan Usia" required>
+                          </div>
+                          <div class="form-group">
+                            <label for="name">Jenis Vaksin (Dosis 2)</label>
+                            <select class="form-control" name="category2">
+                              <option></option>
+                            </select>
+                          </div>
+                          <div class="form-group">
+                            <label for="name">Tempat Vaksinasi (Dosis 2)</label>
+                            <input type="text" class="form-control tmptvaksin2" name="tmptvaksin2" placeholder="Masukkan Nama" required>
+                          </div>
+                          <div class="form-group">
+                            <label for="name">Keluhan Pasca Vaksinasi (Dosis 2)</label>
+                            <textarea name="about2" class="form-control about2"></textarea>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="name">Deskripsi tambahan</label>
+                      <textarea name="about" class="form-control about"></textarea>
+                    </div>
+                    <div class="row">
+                      <div class="col">
+                      </div>
+                      <div class="col">
+                        <a href="/admin/pelapor" class="btn btn-warning" type="button">Back</a>
+                      </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary" hidden>Save</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+  </div>
+
+  
